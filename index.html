@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT DRUM</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+           
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            /* border: 10px solid yellowgreen; */
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            box-shadow:inset 10px  10px 10px greenyellow,inset -10px 0px 10px greenyellow;
+        }
+        .key-boxes{
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .key{
+            display:inline-block;
+            width: 80px ;
+            height: 80px;
+            border: 2px solid red;
+            margin: 0px 10px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 30px orangered;
+            
+        }
+        .key div{
+            margin-top: 10%;
+            font-size: 10px;
+        }
+        .shades{
+            position: relative;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .shades div{
+            display: inline-block;
+            margin: 0px 35px;
+        }
+        .shade-box{
+            position:absolute;
+            bottom: 0%;
+        }
+        .color-shade{ 
+            border-radius: 20px;
+            width: 30px;
+            height: 5px;
+            transition: all 0.7s ease-in-out;
+            box-shadow: 5px 0px 10px;
+        }
+        .animation-class{
+            animation: height-wala 1s linear;
+
+        }
+        @keyframes height-wala{
+            0%{
+                
+                height: 5px;
+            }
+            50%{
+                height:450px;
+            }
+            100%{
+                height: 5px;
+            }
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .violet{
+            background-color: violet;
+        }
+        .white{
+            background-color: white;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellowgreen{
+            background-color: yellowgreen;
+        }
+        @media screen and (max-width: 918px){
+            /* .color-shade{
+                width: 25px;
+            } */
+            @keyframes height-wala{
+            0%{
+                
+                height: 5px;
+            }
+            50%{
+                height:350px;
+            }
+            100%{
+                height: 5px;
+            }
+        }
+        }
+        @media screen and (max-width:878px){
+            .key{
+                width: 70px;
+                margin: 0px 15px;
+            }
+            .color-shade{
+                width: 25px;
+            }
+            .shades div{
+                margin: 0px 30px;
+            }
+        }
+        @media screen and (max-width:788px){
+            .key{
+                width: 50px;
+                height: 50px;
+                margin: 0px 15px;
+            }
+            .color-shade{
+                width: 20px;
+            }
+            .shades div{
+                margin: 0px 27px;
+            }
+        }
+        @media screen and (max-width:694px){
+            .shades div{
+                margin: 0px 20px;
+            }
+        }
+        @media screen and (max-width:568px){
+            .key{
+                width: 40px;
+                height: 40px;
+                margin: 0px 15px;
+                border: none;
+            }
+            .shades div{
+                margin: 0px 15px;
+            }
+        }
+        @media screen and (max-width:478px){
+            .key{
+                width: 20px;
+                height: 20px;
+                margin: 0px 15px;
+                border: none;
+            }
+            .shades div{
+                margin: 0px 10px;
+            }
+        }
+        @media screen and (max-width:388px){
+            .key{
+                width: 15px;
+                height: 15px;
+                margin: 0px 13px;
+                border: none;
+            }
+            .shades div{
+                margin: 0px 6px;
+            }
+        }
+        @media screen and (max-width:316px){
+            .key{
+                text-align: center;
+    font-size: 24px;
+    width: 10px;
+    height: 6px;
+    margin: -1px 12px;
+    border: none;
+                }
+            .color-shade{
+                width: 15px;
+            }
+            .shades div{
+                margin: 0px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+  <div class="key-boxes">
+  
+    <div class="key" data-key="65">
+        <kbd>A</kbd>
+        <div class="sound">CLAP</div>
+    </div>
+    <div class="key" data-key="83">S
+        <div>BOOM</div>
+    </div>
+    <div class="key" data-key="68">D
+        <div>HIT-HAT</div>
+    </div>
+    <div class="key" data-key="70">F
+        <div>KICK</div>
+    </div>
+    <div class="key" data-key="71">G
+        <div>OPEN-HAT</div>
+    </div>
+    <div class="key" data-key="72">H
+        <div>RIDE</div>
+    </div>
+    <div class="key" data-key="74">J
+        <div>SNARE</div>
+    </div>
+    <div class="key" data-key="75">K
+        <div>TOM</div>
+    </div>
+</div>
+<div class="shades">
+    <div class="shade-box">
+        <div class="color-shade red 65" data-key="65"></div>    
+        <div class="color-shade blue 83" data-key="83"></div>    
+        <div class="color-shade green 68" data-key="68"></div>    
+        <div class="color-shade yellow 70" data-key="70"></div>    
+        <div class="color-shade violet 71" data-key="71"></div>    
+        <div class="color-shade white 72" data-key="72"></div>    
+        <div class="color-shade orange 74" data-key="74"></div>    
+        <div class="color-shade yellowgreen 75" data-key="75"></div>    
+    </div>
+</div> 
+</div>
+
+    <audio data-key="65" src="./sounds/01 - JavaScript Drum Kit_sounds_clap.wav"></audio>
+    <audio data-key="83" src="./sounds/01 - JavaScript Drum Kit_sounds_boom.wav"></audio>
+    <audio data-key="68" src="./sounds/01 - JavaScript Drum Kit_sounds_hihat.wav"></audio>
+    <audio data-key="70" src="./sounds/01 - JavaScript Drum Kit_sounds_kick.wav"></audio>
+    <audio data-key="71" src="./sounds/01 - JavaScript Drum Kit_sounds_openhat (1).wav"></audio>
+    <audio data-key="72" src="./sounds/01 - JavaScript Drum Kit_sounds_ride.wav"></audio>
+    <audio data-key="74" src="./sounds/01 - JavaScript Drum Kit_sounds_snare.wav"></audio>
+    <audio data-key="75" src="./sounds/01 - JavaScript Drum Kit_sounds_tom.wav"></audio>
+
+    <script>
+       window.addEventListener("keydown",function(e){
+           let audio=document.querySelector(`audio[data-key='${e.keyCode}']`)
+           let shade_box=document.querySelectorAll(".shade-box div");
+           let animation_class=document.querySelector(".animation-class")
+           for(let i=0;i<shade_box.length;i++)
+           {
+               if(shade_box[i].classList[2]==e.keyCode)
+               {
+                   let abc=shade_box[i].classList.add("animation-class"); 
+                window.addEventListener("keyup",function(e){
+                    shade_box[i].classList.remove("animation-class");
+                //    shade_box[i].classList.add("animation-class"); 
+
+                })
+                }
+
+           }
+           if(!audio)return;
+           audio.currentTime=0;
+           audio.play();
+       })
+    </script>
+    
+</body>
+</html>
